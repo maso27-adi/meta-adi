@@ -3,10 +3,10 @@ LINUX_VERSION = "5.4"
 ADI_VERSION = "adi_master"
 
 PV = "${LINUX_VERSION}-${ADI_VERSION}+git${SRCPV}"
-KBRANCH = "master"
+KBRANCH = "master_2020.1"
 # needed for offline build
 SRCREV = "${@ "89450f163b0404eb7248b5d6ba9b4ca8cc94a675" if bb.utils.to_boolean(d.getVar('BB_NO_NETWORK')) else d.getVar('AUTOREV')}"
-KERNELURI = "git://github.com/analogdevicesinc/linux.git;protocol=https"
+KERNELURI = "git://github.com/maso27-adi/linux.git;protocol=https"
 
 # override kernel config file
 KBUILD_DEFCONFIG_zynq = "zynq_xcomm_adv7511_defconfig"
